@@ -1,0 +1,25 @@
+<h1>
+  {{ titulo }}  
+</h1>
+<input type="text" [(ngModel)]="frut">
+<input type="text" [(ngModel)]="valor">
+<button (click)="adicionar()" class="btn btn-outline-primary">CADASTRAR</button>
+<ul>
+  <li *ngFor="let f of frutas; let i = index">
+    {{ f.fruta }}{{ f.preco }}({{ i }});
+  </li>
+</ul>
+<table border="1">
+  <tr>
+    <th>Fruta</th>
+    <th>Valor</th>
+    <th>Ação</th>
+  </tr>
+  <tr *ngFor="let f of frutas; let i = index">
+    <td>{{ f.fruta }}</td>
+    <td>{{ f.preco }}</td>
+    <td><button (click)="excluir(i)">EXCLUIR</button></td>
+  </tr>
+</table>
+
+
